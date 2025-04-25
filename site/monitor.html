@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitorar Usuários - MedAlerta</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .monitor-container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+    }
+    .background-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .shape { position: absolute; border-radius: 50%; }
+    .shape1 { width: 300px; height: 300px; background: #00c9c8; top: -80px; right: -100px; }
+    .shape2 { width: 250px; height: 250px; background: #673ab7; bottom: -100px; left: -80px; }
+
+    h2 {
+      color: #0d47a1;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px auto;
+      width: 100%;
+      max-width: 280px;
+      padding: 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(to right, #00c9c8, #7b2ff7);
+      position: relative;
+    }
+
+    .btn img {
+      width: 16px;
+      height: 16px;
+      margin-left: 10px;
+    }
+
+    .btn-cadastrar {
+      margin-top: 20px;
+      background: linear-gradient(to right, #00c9c8, #0066ff);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="monitor-container">
+    <h2>Quem você deseja monitorar?</h2>
+
+    <button class="btn">
+      Cecília
+      <img src="https://img.icons8.com/ios-filled/50/edit--v1.png" alt="Editar">
+    </button>
+
+    <button class="btn">
+      Antônio
+      <img src="https://img.icons8.com/ios-filled/50/edit--v1.png" alt="Editar">
+    </button>
+
+    <button class="btn" onclick="redirecionarDonaMaria()">
+      Dona Maria
+      <img src="https://img.icons8.com/ios-filled/50/edit--v1.png" alt="Editar">
+    </button>
+
+    <button class="btn btn-cadastrar" onclick="redirecionarCadastro()">
+      cadastrar
+    </button>
+
+  </div>
+
+  <div class="background-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+  </div>
+
+  <script>
+    function redirecionarCadastro() {
+      window.location.href = "cadastro-remedio.html"; // Altere para o caminho real
+    }
+
+    function redirecionarDonaMaria() {
+      window.location.href = "historico-dona-maria.html"; // Altere para o caminho real do histórico
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Remédio - MedAlerta</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .cadastro-container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+    }
+    .logo {
+      width: 100px;
+      margin: 0 auto 20px;
+    }
+    .logo img {
+      width: 100%;
+    }
+    label {
+      display: block;
+      text-align: left;
+      font-size: 14px;
+      margin: 10px 0 5px;
+    }
+    input[type="text"], input[type="time"], select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .btn {
+      margin: 15px auto;
+      width: 100%;
+      max-width: 280px;
+      padding: 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      color: white;
+      background: linear-gradient(to right, #00c9c8, #0066ff);
+      cursor: pointer;
+    }
+    .background-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .shape { position: absolute; border-radius: 50%; }
+    .shape1 { width: 300px; height: 300px; background: #00c9c8; top: -80px; right: -100px; }
+    .shape2 { width: 250px; height: 250px; background: #673ab7; bottom: -100px; left: -80px; }
+  </style>
+</head>
+<body>
+
+  <div class="cadastro-container">
+    <div class="logo">
+      <img src="imagems/imagem_2025-04-02_094652404-removebg-preview.png" alt="Ícone de Alarme"/>
+    </div>
+
+    <form action="monitor.html" method="GET">
+
+      <label for="codigo">Código do Usuário</label>
+      <input type="text" id="codigo" name="codigo" placeholder="Ex: ABC123!@#" />
+
+      <label for="nomePessoa">Qual o nome da Pessoa?</label>
+      <input type="text" id="nomePessoa" name="nomePessoa" placeholder="Ex: João da Silva" />
+
+      <label for="nomeRemedio">Qual o nome do Remédio?</label>
+      <input type="text" id="nomeRemedio" name="nomeRemedio" placeholder="Ex: Paracetamol" />
+
+      <label for="corRemedio">Qual a cor do remédio?</label>
+      <input type="text" id="corRemedio" name="corRemedio" placeholder="Ex: Branco" />
+
+      <label for="horario">Qual o Horário?</label>
+      <input type="time" id="horario" name="horario" />
+
+      <button class="btn" type="button">Adicionar mais remédio</button>
+      <button class="btn" type="submit">Cadastrar</button>
+      
+    </form>
+  </div>
+
+ 
+
+</body>
+</html>
