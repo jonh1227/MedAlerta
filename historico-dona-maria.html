@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico - Dona Maria</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .history-container {
+      width: 90%;
+      max-width: 400px;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .background-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .shape { position: absolute; border-radius: 50%; }
+    .shape1 { width: 300px; height: 300px; background: #00c9c8; top: -80px; right: -100px; }
+    .shape2 { width: 250px; height: 250px; background: #673ab7; bottom: -100px; left: -80px; }
+
+    .header {
+      background: #00c9c8;
+      padding: 15px;
+      color: #0d47a1;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .sub-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      color: #0d47a1;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .sub-header img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 10px;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 6px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .missed {
+      color: red;
+      font-weight: bold;
+    }
+
+    .legend {
+      margin-top: 20px;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .legend-box {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .taken {
+      background: black;
+    }
+
+    .missed-box {
+      background: red;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="history-container">
+    <div class="header">Dona Maria</div>
+
+    <div class="sub-header">
+      <img src="https://img.icons8.com/ios-filled/50/medical-doctor.png" alt="Ícone">
+      Histórico
+    </div>
+
+    <table>
+      <tr><td>Metformina</td><td>8:00</td><td>01/03/25</td></tr>
+      <tr><td>Rivastigmina</td><td>11:00</td><td>01/03/25</td></tr>
+      <tr><td class="missed">Losartana</td><td class="missed">15:00</td><td class="missed">01/03/25</td></tr>
+      <tr><td>Metformina</td><td>8:00</td><td>01/03/25</td></tr>
+      <tr><td>Rivastigmina</td><td>11:00</td><td>01/03/25</td></tr>
+      <tr><td>Losartana</td><td>15:00</td><td>01/03/25</td></tr>
+      <tr><td class="missed">Metformina</td><td class="missed">8:00</td><td class="missed">01/03/25</td></tr>
+      <tr><td>Rivastigmina</td><td>11:00</td><td>01/03/25</td></tr>
+      <tr><td>Losartana</td><td>15:00</td><td>01/03/25</td></tr>
+    </table>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-box taken"></div> Tomou remédio
+      </div>
+      <div class="legend-item">
+        <div class="legend-box missed-box"></div> Esqueceu de tomar o remédio
+      </div>
+    </div>
+
+  </div>
+
+  <div class="background-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+  </div>
+
+</body>
+</html>

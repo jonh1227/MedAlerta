@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedAlerta</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+    .container, .login-container, .register-container, .forgot-container {
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      position: relative;
+    }
+    .hidden { display: none; }
+    .logo { width: 100px; margin: 0 auto; }
+    .logo img { width: 100%; }
+    .brand { font-weight: bold; font-size: 28px; margin: 10px 0; }
+    .brand span:first-child { color: #00c9c8; }
+    .brand span:last-child { color: red; }
+    .btn {
+      display: block;
+      margin: 15px auto;
+      width: 100%;
+      max-width: 280px;
+      padding: 12px;
+      border: none;
+      border-radius: 20px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(to right, #7b2ff7, #00c9c8);
+    }
+    .background-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .shape { position: absolute; border-radius: 50%; }
+    .shape1 { width: 300px; height: 300px; background: #00c9c8; top: -80px; right: -100px; }
+    .shape2 { width: 250px; height: 250px; background: #673ab7; bottom: -100px; left: -80px; }
+    .accessibility {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+    .accessibility button {
+      background: #2196f3;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    input[type="email"], input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 16px;
+    }
+    .link {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #0d47a1;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .login-title, .register-title, .forgot-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0d47a1;
+      margin: 20px 0;
+    }
+    @media (max-height: 600px) {
+      .shape1 { width: 200px; height: 200px; }
+      .shape2 { width: 180px; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Tela inicial -->
+  <div class="container" id="mainScreen">
+    <div class="logo">
+      <img src="imagems/imagem_2025-04-02_094652404-removebg-preview.png" alt="Logo">
+    </div>
+    <div class="brand">
+      <span>Med</span><span>Alerta</span>
+    </div>
+    <button class="btn" onclick="window.location.href='usuario.html'">Usuário</button>
+    <button class="btn" onclick="showLogin()">Responsável</button>
+  </div>
+
+  <!-- Tela de Login -->
+  <div class="login-container hidden" id="loginScreen">
+    <div class="logo">
+      <img src="imagems/imagem_2025-04-02_094652404-removebg-preview.png" alt="Logo">
+    </div>
+    <div class="login-title">Login</div>
+    <label for="email">Coloque seu Email</label>
+    <input type="email" id="email" placeholder="nome@gmail.com">
+
+    <label for="senha">Coloque sua Senha</label>
+    <input type="password" id="senha" placeholder="********">
+
+    <a class="link" onclick="showRegister()">Criar conta</a>
+    <a class="link" onclick="showForgot()">Esqueceu a senha?</a>
+
+    <a href="monitor.html" class="btn">LOGIN</a>
+    <button class="btn" onclick="goBack()">Voltar</button>
+  </div>
+
+  <!-- Tela de Cadastro -->
+  <div class="register-container hidden" id="registerScreen">
+    <div class="logo">
+      <img src="https://img.icons8.com/ios-filled/100/alarm.png" alt="Logo">
+    </div>
+    <div class="register-title">Criar Conta</div>
+    <label for="nome">Nome Completo</label>
+    <input type="text" id="nome" placeholder="Seu nome completo">
+
+    <label for="novoEmail">Email</label>
+    <input type="email" id="novoEmail" placeholder="nome@gmail.com">
+
+    <label for="novaSenha">Senha</label>
+    <input type="password" id="novaSenha" placeholder="********">
+
+    <button class="btn" onclick="alert('Conta criada com sucesso!')">Registrar</button>
+    <button class="btn" onclick="goBackLogin()">Voltar</button>
+  </div>
+
+  <!-- Tela de Recuperar Senha -->
+  <div class="forgot-container hidden" id="forgotScreen">
+    <div class="logo">
+      <img src="https://img.icons8.com/ios-filled/100/alarm.png" alt="Logo">
+    </div>
+    <div class="forgot-title">Recuperar Senha</div>
+    <label for="emailRecuperar">Digite seu Email</label>
+    <input type="email" id="emailRecuperar" placeholder="nome@gmail.com">
+
+    <button class="btn" onclick="alert('Email para recuperação enviado!')">Enviar</button>
+    <button class="btn" onclick="goBackLoginFromForgot()">Voltar</button>
+  </div>
+
+  <div class="background-shapes">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+  </div>
+
+  <div class="accessibility">
+    <button>♿</button>
+  </div>
+
+  <script>
+    function showLogin() {
+      document.getElementById('mainScreen').classList.add('hidden');
+      document.getElementById('loginScreen').classList.remove('hidden');
+      document.getElementById('registerScreen').classList.add('hidden');
+      document.getElementById('forgotScreen').classList.add('hidden');
+    }
+
+    function showRegister() {
+      document.getElementById('loginScreen').classList.add('hidden');
+      document.getElementById('registerScreen').classList.remove('hidden');
+    }
+
+    function showForgot() {
+      document.getElementById('loginScreen').classList.add('hidden');
+      document.getElementById('forgotScreen').classList.remove('hidden');
+    }
+
+    function goBack() {
+      document.getElementById('loginScreen').classList.add('hidden');
+      document.getElementById('mainScreen').classList.remove('hidden');
+    }
+
+    function goBackLogin() {
+      document.getElementById('registerScreen').classList.add('hidden');
+      document.getElementById('loginScreen').classList.remove('hidden');
+    }
+
+    function goBackLoginFromForgot() {
+      document.getElementById('forgotScreen').classList.add('hidden');
+      document.getElementById('loginScreen').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
